@@ -1,0 +1,11 @@
+<form action="/lists" method="post"> 
+  <dl>
+    <dt>
+      <label for="list_name">Enter the name for your new list:</label>
+    </dt>
+    <dd>
+      <input name="list_name" placeholder="<%= params[:list_name] || "List name" %>" type="text" value="">
+    </dd>
+  </dl>
+  <fieldset class="actions"><%= SUBMIT_OR_CANCEL_BTN %></fieldset>
+</form>

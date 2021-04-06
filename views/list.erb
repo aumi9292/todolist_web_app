@@ -1,0 +1,22 @@
+<% sec_class = list_completed?(@list) ? "complete" : "" %>
+
+<section class="<%= sec_class %>" id="todos">
+  <header><%= titlefy %></header>
+  <ul> <%= todo_listify %></ul>
+</section>
+
+<form action="/lists/<%= @list_id %>/todos" method="post"> 
+<dl>
+  <dt>
+    <label for="list_name">Enter a new todo item:</label>
+  </dt>
+  <dd>
+    <input name="todo_name" placeholder="<%= params[:todo_name] || "Todo Name" %>" type="text" value="">
+  </dd>
+</dl>
+<fieldset class="actions"><%= SUBMIT_OR_CANCEL_BTN %></fieldset>
+</form>
+
+<% content_for :nav_header do %>
+  <%= "<p class=\"actions\"><a class=\"list\" href=\"/lists\">All lists</a></p>" %>
+<% end %>

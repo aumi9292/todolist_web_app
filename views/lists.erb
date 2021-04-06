@@ -1,0 +1,7 @@
+<ul id="lists">
+  <%= format_lists(@lists) { |idx, name, count| listify(idx, name, count) } %>
+</ul>
+
+<% content_for :nav_header do %>
+  <%= "<p class=\"actions\"><a class=\"add\" href=\"/lists/new\">New List</a></p>" %>
+<% end %>
